@@ -1,0 +1,17 @@
+= render 'shared/content_title', title: "All Videos"
+
+%article.video_category
+  - @categories.each do |category|
+    = category.name
+      .video.row
+        category.videos.each do |video|
+        = image_tag video.small_cover_url
+
+        
+
+
+
+
+
+      
+
