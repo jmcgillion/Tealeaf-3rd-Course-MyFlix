@@ -3,9 +3,12 @@
 %article.video_category
   - @categories.each do |category|
     = category.name
-      .video.row
-        category.videos.each do |video|
+    .video.row
+      - category.videos.each do |video|
         = image_tag video.small_cover_url
+
+
+        
 
         
 

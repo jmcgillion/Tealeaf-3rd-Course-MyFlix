@@ -1,6 +1,10 @@
-class Video <ActiveRecord::Base
-
+class Video < ActiveRecord::Base
+  belongs_to :categories
 end
+
+
+
+
 
 
 
