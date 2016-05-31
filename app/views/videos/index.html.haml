@@ -4,7 +4,7 @@
   - @categories.each do |category|
     = category.name
     .video.row
-      - category.videos.each do |video|
+      - category.recent_videos.each do |video|
         = image_tag video.small_cover_url
 
 
