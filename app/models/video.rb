@@ -1,5 +1,8 @@
 class Video < ActiveRecord::Base
   belongs_to :category
+  has_many :reviews, -> {order("created_at DESC")}
+
+  has_many :queue_items
 
   validates_presence_of :title, :description
 
@@ -8,6 +11,12 @@ class Video < ActiveRecord::Base
     where("title LIKE ?", "%#{search_term}%").order("created_at DESC")
   end
 end
+
+
+
+
+
+
 
 
 

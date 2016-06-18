@@ -30,6 +30,29 @@ south_park = Video.create(title: "South Park", description: "What a fun comedy .
 
 family_guy = Video.create(title: "Family Guy", description: "A knee slapping, laugh out loud ...", small_cover_url: "/tmp/family_guy.jpg", category_id: 1)
 
+kevin = User.create(full_name: "Kevin Moran", email: "kevin@example.com", password: "password")
+
+john = User.create(full_name: "John McGillion", email: "john.r.mcgillion@gmail.com", password: "Whitey415")
+
+Review.create(content: "hoopla", video: monk, user: kevin, rating: 5)
+Review.create(content: "boopla", video: monk, user: kevin, rating: 4)
+
+QueueItem.create(video:family_guy, user: john)
+
+QueueItem.create(video: south_park, user: john)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

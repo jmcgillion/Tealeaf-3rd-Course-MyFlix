@@ -12,6 +12,14 @@ describe VideosController do
         get :show, id: video.id
         expect(assigns(:video)).to eq(video)
       end
+
+      it 'sets up @reviews' do
+        video = Fabricate(:video)
+        review1 = Fabricate(:review, video: video)
+        review2 = Fabricate(:review, video: video)
+        get :show, id: video.id
+        assigns(:reviews)).should =~[review1, review2]
+      end
     end
 
     context "with unauthenticated users" do
@@ -36,7 +44,8 @@ describe VideosController do
       expect(response).to redirect_to sign_in_path
     end
   end
-end
+
+  
 
 
 
